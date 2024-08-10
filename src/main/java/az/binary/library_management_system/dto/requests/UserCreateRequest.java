@@ -1,27 +1,21 @@
-package az.binary.library_management_system.entities;
+package az.binary.library_management_system.dto.requests;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "user")
-public class user {
+public class UserCreateRequest {
 
-    private int id;
     private String first_name;
     private String last_name;
     private Email emailAddress;
     private String password;
-
 
 }
