@@ -1,13 +1,10 @@
 package az.binary.library_management_system.entities;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
 
 @Entity
 @Getter
@@ -17,10 +14,24 @@ import lombok.Setter;
 @Table(name = "User")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+
+    @NotBlank
+    @Column(name = "first_name")
     private String first_name;
+
+    @NotBlank
+    @Column(name = "last_name")
     private String last_name;
+
+    @NotBlank
+    @Column(name = "email_address")
     private Email emailAddress;
+
+    @NotBlank
+    @Column(name = "password")
     private String password;
 
 

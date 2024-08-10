@@ -13,7 +13,6 @@ import lombok.Setter;
 @AllArgsConstructor
 public class UserCreateRequest {
 
-    private int id;
     private String first_name;
     private String last_name;
     private Email emailAddress;
