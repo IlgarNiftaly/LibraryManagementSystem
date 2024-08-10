@@ -27,8 +27,8 @@ public class User {
     private String last_name;
 
     @NotBlank
-    @Column(name = "email_address")
-    private Email emailAddress;
+    @Column(name = "email")
+    private String email;
 
     @NotBlank
     @Column(name = "password")

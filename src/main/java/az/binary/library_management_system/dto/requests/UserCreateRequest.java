@@ -1,7 +1,6 @@
 package az.binary.library_management_system.dto.requests;
 
 
-import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,7 @@ public class UserCreateRequest {
 
     private String first_name;
     private String last_name;
-    private Email emailAddress;
+    private String email;
     private String password;
 
 }

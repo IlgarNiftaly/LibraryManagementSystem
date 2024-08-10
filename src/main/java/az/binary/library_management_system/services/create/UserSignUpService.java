@@ -19,7 +19,7 @@ public class UserSignUpService {
     private final UserMapper userMapper;
 
     public UserCreateResponse create(UserCreateRequest createRequest){
-        if(Objects.nonNull(userRepository.findByEmail(createRequest.getEmailAddress()))){
+        if(Objects.nonNull(userRepository.findByEmail(createRequest.getEmail()))){
             log.info("email artiq movgutdur");
             throw new RuntimeException();
         }
