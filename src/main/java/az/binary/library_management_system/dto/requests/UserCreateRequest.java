@@ -1,11 +1,8 @@
 package az.binary.library_management_system.dto.requests;
 
 
-import jakarta.validation.constraints.Email;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.validation.constraints.NotBlank;
+import lombok.*;
 
 @Getter
 @Setter
@@ -13,9 +10,16 @@ import lombok.Setter;
 @AllArgsConstructor
 public class UserCreateRequest {
 
-    private String first_name;
-    private String last_name;
-    private Email emailAddress;
+    @NotBlank(message = "FirstName cannot be request")
+    private String firstName;
+
+    @NotBlank(message = "LastName cannot be request")
+    private String lastName;
+
+    @NotBlank(message = "Email cannot be request")
+    private String email;
+
+    @NotBlank(message = "Password cannot be request")
     private String password;
 
 }

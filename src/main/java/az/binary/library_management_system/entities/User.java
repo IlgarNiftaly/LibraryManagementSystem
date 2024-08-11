@@ -6,31 +6,34 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
+
 @Entity
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "User")
+@Table(name = "user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
     private Long id;
 
-    @NotBlank
+    @NotBlank(message = "FirstName cannot be blank")
     @Column(name = "first_name")
-    private String first_name;
+    private String firstName;
 
-    @NotBlank
+    @NotBlank(message = "LastName cannot be blank")
     @Column(name = "last_name")
-    private String last_name;
+    private String lastName;
 
-    @NotBlank
-    @Column(name = "email_address")
-    private Email emailAddress;
+    @NotBlank(message = "Email cannot be blank")
+    @Column(name = "email")
+    @Email(message = "invalid email structure")
+    private String email;
 
-    @NotBlank
+    @NotBlank(message = "Password cannot be blank")
     @Column(name = "password")
     private String password;
 
