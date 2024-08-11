@@ -1,5 +1,5 @@
 server:
-  path: 8585
+  port: 8383
 
 spring:
   application:
