@@ -1,5 +1,6 @@
 package az.binary.library_management_system.dto.requests;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 
@@ -7,11 +8,12 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserCreateRequest {
+public class UserLogInRequest {
 
-    private String firstName;
-    private String lastName;
+    @NotBlank
     private String email;
+
+    @NotBlank
     private String password;
 
 }

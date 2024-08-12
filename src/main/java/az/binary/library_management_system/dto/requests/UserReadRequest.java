@@ -1,19 +1,16 @@
 package az.binary.library_management_system.dto.requests;
 
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
-
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserLohInRequest {
+public class UserReadRequest {
 
-    @NotBlank
+    private Long id;
+    private String firstName;
+    private String lastName;
     private String email;
-
-    @NotBlank
-    private String password;
 
 }
