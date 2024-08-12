@@ -1,7 +1,7 @@
 package az.binary.library_management_system.controllers;
 
 import az.binary.library_management_system.dto.requests.UserCreateRequest;
-import az.binary.library_management_system.dto.requests.UserLohInRequest;
+import az.binary.library_management_system.dto.requests.UserLogInRequest;
 import az.binary.library_management_system.dto.responses.UserCreateResponse;
 import az.binary.library_management_system.dto.responses.UserLogInResponse;
 import az.binary.library_management_system.services.create.UserSignUpService;
@@ -29,7 +29,7 @@ public class UserController {
 
     @PostMapping("/log_in")
     @ResponseStatus(HttpStatus.ACCEPTED)
-    public ResponseEntity<UserLogInResponse> logIn(@RequestBody UserLohInRequest logInRequest){
+    public ResponseEntity<UserLogInResponse> logIn(@RequestBody UserLogInRequest logInRequest){
         return ResponseEntity.ok(logInService.logIn(logInRequest));
     }
 

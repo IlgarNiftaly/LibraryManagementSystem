@@ -8,7 +8,7 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserLohInRequest {
+public class UserLogInRequest {
 
     @NotBlank
     private String email;
