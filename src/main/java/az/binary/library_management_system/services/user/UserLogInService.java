@@ -1,4 +1,4 @@
-package az.binary.library_management_system.services.login;
+package az.binary.library_management_system.services.user;
 
 
 import az.binary.library_management_system.dto.requests.UserLogInRequest;

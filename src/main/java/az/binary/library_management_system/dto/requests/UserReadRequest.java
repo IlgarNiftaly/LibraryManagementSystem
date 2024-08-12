@@ -2,16 +2,15 @@ package az.binary.library_management_system.dto.requests;
 
 import lombok.*;
 
-
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserCreateRequest {
+public class UserReadRequest {
 
+    private Long id;
     private String firstName;
     private String lastName;
     private String email;
-    private String password;
 
 }
