@@ -26,6 +26,11 @@ public class UserReadService {
                 .toList();
     }
 
+    public UserReadResponse readById(UserReadRequest readRequest){
+        User user = userRepository.findById(readRequest.getId()).orElseThrow(UserNotFoundException::new);
+        return userMapper.mapReadToResponse(user);
+    }
+
     public UserReadResponse readByEmail(UserReadRequest readRequest){
         User user = Optional.ofNullable(userRepository.findByEmail(readRequest.getEmail())).orElseThrow(UserNotFoundException::new);
 
@@ -47,6 +52,7 @@ public class UserReadService {
         }else{
             throw new UserNotFoundException();
         }
+        //TODO: userByFirstNameOrLastName dogru islemir
     }
 
 }

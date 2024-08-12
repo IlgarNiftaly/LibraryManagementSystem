@@ -39,6 +39,29 @@ public class UserController {
         return ResponseEntity.ok(logInService.logIn(logInRequest));
     }
 
+    @PostMapping("/read_all")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<List<UserReadResponse>> readAll(){
+        return ResponseEntity.ok(readService.readAll());
+    }
+
+    @PostMapping("/read_by_id")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<UserReadResponse> readById(@RequestBody @Valid UserReadRequest readRequest){
+        return ResponseEntity.ok(readService.readById(readRequest));
+    }
+
+    @PostMapping("/read_by_email")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<UserReadResponse> readByEmail(@RequestBody @Valid UserReadRequest readRequest){
+        return ResponseEntity.ok(readService.readByEmail(readRequest));
+    }
+
+    @PostMapping("/read_by_other")
+    @ResponseStatus(HttpStatus.OK)
+    public ResponseEntity<List<UserReadResponse>> readByOther(@RequestBody @Valid UserReadRequest readRequest){
+        return ResponseEntity.ok(readService.readByOther(readRequest));
+    }
 
 
 }
