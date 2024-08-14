@@ -1,6 +1,5 @@
 package az.binary.library_management_system.dto.requests.book;
 
-import jakarta.persistence.Column;
 import lombok.*;
 
 import java.time.LocalDateTime;
