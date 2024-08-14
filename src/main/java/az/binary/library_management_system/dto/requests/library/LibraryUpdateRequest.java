@@ -1,5 +1,6 @@
 package az.binary.library_management_system.dto.requests.library;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 @Getter
@@ -9,7 +10,17 @@ import lombok.*;
 public class LibraryUpdateRequest {
 
     private Long id;
+
+    @NotBlank(message = "name cannot be blank")
     private String name;
+
+    @NotBlank(message = "fkBookId cannot be blank")
+    private Long fkBookId;
+
+    @NotBlank(message = "fkUserId cannot be blank")
+    private Long fkUserId;
+
+    @NotBlank(message = "status cannot be blank")
     private String status;
 
 }

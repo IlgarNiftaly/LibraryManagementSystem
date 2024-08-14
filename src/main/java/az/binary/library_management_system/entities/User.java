@@ -37,5 +37,11 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "fk_book_id")
+    private Long fkBookId;
+
+    @Column(name = "fk_library_id")
+    private Long fkLibraryId;
+
 
 }

@@ -9,6 +9,8 @@ import lombok.*;
 public class LibraryCreateRequest {
 
     private String name;
+    private Long fkBookId;
+    private Long fkUserId;
     private String status;
 
 }
