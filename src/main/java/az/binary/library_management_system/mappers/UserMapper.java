@@ -1,8 +1,10 @@
 package az.binary.library_management_system.mappers;
 
-import az.binary.library_management_system.dto.requests.UserCreateRequest;
-import az.binary.library_management_system.dto.requests.UserLogInRequest;
-import az.binary.library_management_system.dto.responses.*;
+import az.binary.library_management_system.dto.requests.user.UserCreateRequest;
+import az.binary.library_management_system.dto.requests.user.UserLogInRequest;
+import az.binary.library_management_system.dto.responses.user.UserCreateResponse;
+import az.binary.library_management_system.dto.responses.user.UserLogInResponse;
+import az.binary.library_management_system.dto.responses.user.UserReadResponse;
 import az.binary.library_management_system.entities.User;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;

@@ -1,4 +1,4 @@
-package az.binary.library_management_system.dto.responses;
+package az.binary.library_management_system.dto.responses.user;
 
 import lombok.*;
 

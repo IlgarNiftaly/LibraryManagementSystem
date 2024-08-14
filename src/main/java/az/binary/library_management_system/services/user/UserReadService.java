@@ -1,7 +1,7 @@
 package az.binary.library_management_system.services.user;
 
-import az.binary.library_management_system.dto.requests.UserReadRequest;
-import az.binary.library_management_system.dto.responses.UserReadResponse;
+import az.binary.library_management_system.dto.requests.user.UserReadRequest;
+import az.binary.library_management_system.dto.responses.user.UserReadResponse;
 import az.binary.library_management_system.entities.User;
 import az.binary.library_management_system.exceptions.user.UserNotFoundException;
 import az.binary.library_management_system.mappers.UserMapper;
@@ -10,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 
 

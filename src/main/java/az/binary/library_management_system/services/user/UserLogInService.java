@@ -1,8 +1,8 @@
 package az.binary.library_management_system.services.user;
 
 
-import az.binary.library_management_system.dto.requests.UserLogInRequest;
-import az.binary.library_management_system.dto.responses.UserLogInResponse;
+import az.binary.library_management_system.dto.requests.user.UserLogInRequest;
+import az.binary.library_management_system.dto.responses.user.UserLogInResponse;
 import az.binary.library_management_system.entities.User;
 import az.binary.library_management_system.exceptions.other.InvalidPasswordException;
 import az.binary.library_management_system.exceptions.user.UserNotFoundException;

@@ -1,7 +1,7 @@
 package az.binary.library_management_system.services.user;
 
-import az.binary.library_management_system.dto.requests.UserCreateRequest;
-import az.binary.library_management_system.dto.responses.UserCreateResponse;
+import az.binary.library_management_system.dto.requests.user.UserCreateRequest;
+import az.binary.library_management_system.dto.responses.user.UserCreateResponse;
 import az.binary.library_management_system.entities.User;
 import az.binary.library_management_system.exceptions.user.UserFoundException;
 import az.binary.library_management_system.mappers.UserMapper;
