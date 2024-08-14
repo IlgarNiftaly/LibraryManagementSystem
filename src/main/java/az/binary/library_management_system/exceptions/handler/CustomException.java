@@ -1,5 +1,6 @@
 package az.binary.library_management_system.exceptions.handler;
 
+import az.binary.library_management_system.exceptions.book.BookAuthorNotFoundException;
 import az.binary.library_management_system.exceptions.book.BookFoundException;
 import az.binary.library_management_system.exceptions.book.BookNotFoundException;
 import az.binary.library_management_system.exceptions.library.LibraryFoundException;
@@ -32,6 +33,13 @@ public class CustomException {
     @ResponseStatus(NOT_FOUND)
     public ProblemDetail handlerBookNotFoundException(Exception ex){
         log.info("handlerBookNotFoundException {}", ex.getMessage());
+        return ProblemDetail.forStatusAndDetail(NOT_FOUND, ex.getMessage());
+    }
+
+    @ExceptionHandler(BookAuthorNotFoundException.class)
+    @ResponseStatus(NOT_FOUND)
+    public ProblemDetail handlerBookAuthorNotFoundException(Exception ex){
+        log.info("handlerBookAuthorNotFoundException {}", ex.getMessage());
         return ProblemDetail.forStatusAndDetail(NOT_FOUND, ex.getMessage());
     }
 
