@@ -39,13 +39,13 @@ public class UserReadService {
 
     public List<UserReadResponse> readByOther(UserReadRequest readRequest){
         List<User> userByFirstNameAndLastName = userRepository.findUserByFirstNameAndLastName(readRequest.getFirstName(), readRequest.getLastName());
-        if(Objects.nonNull(userByFirstNameAndLastName)){
+        if(!userByFirstNameAndLastName.isEmpty()){
             return userByFirstNameAndLastName.stream()
                     .map(userMapper::mapReadToResponse)
                     .toList();
         }
         List<User> userByFirstNameOrLastName = userRepository.findUserByFirstNameOrLastName(readRequest.getFirstName(), readRequest.getLastName());
-        if(Objects.nonNull(userByFirstNameOrLastName)){
+        if(!userByFirstNameOrLastName.isEmpty()){
             return userByFirstNameOrLastName.stream()
                     .map(userMapper::mapReadToResponse)
                     .toList();
