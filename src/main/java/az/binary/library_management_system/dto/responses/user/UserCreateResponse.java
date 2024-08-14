@@ -1,14 +1,14 @@
-package az.binary.library_management_system.dto.requests;
+package az.binary.library_management_system.dto.responses.user;
 
 import lombok.*;
-
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserCreateRequest {
+public class UserCreateResponse {
 
+    private Long id;
     private String firstName;
     private String lastName;
     private String email;

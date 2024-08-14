@@ -1,4 +1,4 @@
-package az.binary.library_management_system.dto.requests;
+package az.binary.library_management_system.dto.requests.user;
 
 import lombok.*;
 

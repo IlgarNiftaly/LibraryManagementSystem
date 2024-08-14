@@ -1,9 +1,7 @@
 package az.binary.library_management_system.services.user;
 
 
-import az.binary.library_management_system.dto.requests.UserReadRequest;
-import az.binary.library_management_system.dto.requests.UserUpdateRequest;
-import az.binary.library_management_system.dto.responses.UserUpdateResponse;
+import az.binary.library_management_system.dto.requests.user.UserUpdateRequest;
 import az.binary.library_management_system.entities.User;
 import az.binary.library_management_system.exceptions.user.UserNotFoundException;
 import az.binary.library_management_system.mappers.UserMapper;

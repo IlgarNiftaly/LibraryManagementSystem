@@ -1,10 +1,9 @@
 package az.binary.library_management_system.controllers;
 
-import az.binary.library_management_system.dto.requests.*;
-import az.binary.library_management_system.dto.responses.UserCreateResponse;
-import az.binary.library_management_system.dto.responses.UserLogInResponse;
-import az.binary.library_management_system.dto.responses.UserReadResponse;
-import az.binary.library_management_system.dto.responses.UserUpdateResponse;
+import az.binary.library_management_system.dto.requests.user.*;
+import az.binary.library_management_system.dto.responses.user.UserCreateResponse;
+import az.binary.library_management_system.dto.responses.user.UserLogInResponse;
+import az.binary.library_management_system.dto.responses.user.UserReadResponse;
 import az.binary.library_management_system.services.user.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
