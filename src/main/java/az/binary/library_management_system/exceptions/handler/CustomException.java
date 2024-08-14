@@ -1,5 +1,7 @@
 package az.binary.library_management_system.exceptions.handler;
 
+import az.binary.library_management_system.exceptions.book.BookFoundException;
+import az.binary.library_management_system.exceptions.book.BookNotFoundException;
 import az.binary.library_management_system.exceptions.library.LibraryFoundException;
 import az.binary.library_management_system.exceptions.library.LibraryNotFoundException;
 import az.binary.library_management_system.exceptions.other.StatusIsEmptyException;
@@ -19,17 +21,17 @@ import static org.springframework.http.HttpStatus.*;
 @Slf4j
 public class CustomException {
 
-    @ExceptionHandler(UserFoundException.class)
+    @ExceptionHandler(BookFoundException.class)
     @ResponseStatus(FOUND)
-    public ProblemDetail handlerUserFoundException(Exception ex){
-        log.info("handlerUserFoundException {}", ex.getMessage());
+    public ProblemDetail handlerBookFoundException(Exception ex){
+        log.info("handlerBookFoundException {}", ex.getMessage());
         return ProblemDetail.forStatusAndDetail(FOUND, ex.getMessage());
     }
 
-    @ExceptionHandler(UserNotFoundException.class)
+    @ExceptionHandler(BookNotFoundException.class)
     @ResponseStatus(NOT_FOUND)
-    public ProblemDetail handlerUserNotFoundException(Exception ex){
-        log.info("handlerUserNotFoundException {}", ex.getMessage());
+    public ProblemDetail handlerBookNotFoundException(Exception ex){
+        log.info("handlerBookNotFoundException {}", ex.getMessage());
         return ProblemDetail.forStatusAndDetail(NOT_FOUND, ex.getMessage());
     }
 
@@ -44,6 +46,20 @@ public class CustomException {
     @ResponseStatus(NOT_FOUND)
     public ProblemDetail handlerLibraryNotFoundException(Exception ex){
         log.info("handlerLibraryNotFoundException {}", ex.getMessage());
+        return ProblemDetail.forStatusAndDetail(NOT_FOUND, ex.getMessage());
+    }
+
+    @ExceptionHandler(UserFoundException.class)
+    @ResponseStatus(FOUND)
+    public ProblemDetail handlerUserFoundException(Exception ex){
+        log.info("handlerUserFoundException {}", ex.getMessage());
+        return ProblemDetail.forStatusAndDetail(FOUND, ex.getMessage());
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    @ResponseStatus(NOT_FOUND)
+    public ProblemDetail handlerUserNotFoundException(Exception ex){
+        log.info("handlerUserNotFoundException {}", ex.getMessage());
         return ProblemDetail.forStatusAndDetail(NOT_FOUND, ex.getMessage());
     }
 
