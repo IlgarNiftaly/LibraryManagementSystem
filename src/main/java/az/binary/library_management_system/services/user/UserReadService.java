@@ -51,7 +51,6 @@ public class UserReadService {
         }else{
             throw new UserNotFoundException();
         }
-        //TODO: userByFirstNameOrLastName dogru islemir
     }
 
 }

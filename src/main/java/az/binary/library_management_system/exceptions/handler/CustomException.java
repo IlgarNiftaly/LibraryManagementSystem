@@ -2,6 +2,7 @@ package az.binary.library_management_system.exceptions.handler;
 
 import az.binary.library_management_system.exceptions.library.LibraryFoundException;
 import az.binary.library_management_system.exceptions.library.LibraryNotFoundException;
+import az.binary.library_management_system.exceptions.other.StatusIsEmptyException;
 import az.binary.library_management_system.exceptions.user.UserFoundException;
 import az.binary.library_management_system.exceptions.other.InvalidPasswordException;
 import az.binary.library_management_system.exceptions.user.UserNotFoundException;
@@ -51,6 +52,13 @@ public class CustomException {
     public ProblemDetail handlerInvalidPasswordException(Exception ex){
         log.info("handlerInvalidPasswordException {}", ex.getMessage());
         return ProblemDetail.forStatusAndDetail(UNAUTHORIZED, ex.getMessage());
+    }
+
+    @ExceptionHandler(StatusIsEmptyException.class)
+    @ResponseStatus(NO_CONTENT)
+    public ProblemDetail handlerStatusIsEmptyException(Exception ex){
+        log.info("handlerStatusIsEmptyException {}", ex.getMessage());
+        return ProblemDetail.forStatusAndDetail(NO_CONTENT, ex.getMessage());
     }
 
 }

@@ -7,6 +7,7 @@ import az.binary.library_management_system.entities.Library;
 import org.mapstruct.Mapper;
 import org.mapstruct.ReportingPolicy;
 
+
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE, unmappedSourcePolicy = ReportingPolicy.IGNORE)
 public interface LibraryMapper {
     Library mapRequestToEntity(LibraryCreateRequest createRequest);
