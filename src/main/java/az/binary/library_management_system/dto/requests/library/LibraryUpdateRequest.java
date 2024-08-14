@@ -6,8 +6,9 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class LibraryCreateRequest {
+public class LibraryUpdateRequest {
 
+    private Long id;
     private String name;
     private String status;
 

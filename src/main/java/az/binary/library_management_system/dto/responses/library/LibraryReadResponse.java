@@ -1,4 +1,4 @@
-package az.binary.library_management_system.dto.requests.library;
+package az.binary.library_management_system.dto.responses.library;
 
 import lombok.*;
 
@@ -6,8 +6,9 @@ import lombok.*;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class LibraryCreateRequest {
+public class LibraryReadResponse {
 
+    private Long id;
     private String name;
     private String status;
 
