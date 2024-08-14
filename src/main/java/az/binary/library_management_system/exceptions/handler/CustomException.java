@@ -1,5 +1,7 @@
 package az.binary.library_management_system.exceptions.handler;
 
+import az.binary.library_management_system.exceptions.library.LibraryFoundException;
+import az.binary.library_management_system.exceptions.library.LibraryNotFoundException;
 import az.binary.library_management_system.exceptions.user.UserFoundException;
 import az.binary.library_management_system.exceptions.other.InvalidPasswordException;
 import az.binary.library_management_system.exceptions.user.UserNotFoundException;
@@ -25,11 +27,24 @@ public class CustomException {
 
     @ExceptionHandler(UserNotFoundException.class)
     @ResponseStatus(NOT_FOUND)
-    public ProblemDetail handlerNotUserFoundException(Exception ex){
-        log.info("handlerNotUserFoundException {}", ex.getMessage());
+    public ProblemDetail handlerUserNotFoundException(Exception ex){
+        log.info("handlerUserNotFoundException {}", ex.getMessage());
         return ProblemDetail.forStatusAndDetail(NOT_FOUND, ex.getMessage());
     }
 
+    @ExceptionHandler(LibraryFoundException.class)
+    @ResponseStatus(FOUND)
+    public ProblemDetail handlerLibraryFoundException(Exception ex){
+        log.info("handlerLibraryFoundException {}", ex.getMessage());
+        return ProblemDetail.forStatusAndDetail(FOUND, ex.getMessage());
+    }
+
+    @ExceptionHandler(LibraryNotFoundException.class)
+    @ResponseStatus(NOT_FOUND)
+    public ProblemDetail handlerLibraryNotFoundException(Exception ex){
+        log.info("handlerLibraryNotFoundException {}", ex.getMessage());
+        return ProblemDetail.forStatusAndDetail(NOT_FOUND, ex.getMessage());
+    }
 
     @ExceptionHandler(InvalidPasswordException.class)
     @ResponseStatus(UNAUTHORIZED)
