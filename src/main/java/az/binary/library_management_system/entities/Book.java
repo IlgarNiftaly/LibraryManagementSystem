@@ -14,6 +14,10 @@ import java.time.LocalDateTime;
 @Table(name = "book")
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(name = "book_name")
     private String name;
 
