@@ -27,11 +27,11 @@ public class Book {
     @Column(name = "create_date_time")
     private LocalDateTime createDateTime;
 
-//    @Column(name = "fk_library_id")
-//    private Long fkLibraryId;
-//
-//    @Column(name = "fk_user_id")
-//    private Long fkUserId;
+    @Column(name = "fk_library_id")
+    private Long fkLibraryId;
+
+    @Column(name = "fk_user_id")
+    private Long fkUserId;
 
     @Column(name = "book_status")
     private String status;

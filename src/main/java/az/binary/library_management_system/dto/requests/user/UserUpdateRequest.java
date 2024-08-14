@@ -24,4 +24,10 @@ public class UserUpdateRequest {
     @NotBlank(message = "Password cannot be blank")
     private String password;
 
+    @NotBlank(message = "fkBookId cannot be blank")
+    private Long fkBookId;
+
+    @NotBlank(message = "fkLibraryId cannot be blank")
+    private Long fkLibraryId;
+
 }

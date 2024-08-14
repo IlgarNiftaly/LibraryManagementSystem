@@ -22,11 +22,11 @@ public class Library {
     @Column(name = "status")
     private String status;
 
-//    @Column(name = "fk_user_id")
-//    private Long fkUserId;
+    @Column(name = "fk_user_id")
+    private Long fkUserId;
 
-//    @Column(name = "fk_book_id")
-//    private Long fkBookId;
+    @Column(name = "fk_book_id")
+    private Long fkBookId;
 
     @PrePersist
     public void preStatus(){

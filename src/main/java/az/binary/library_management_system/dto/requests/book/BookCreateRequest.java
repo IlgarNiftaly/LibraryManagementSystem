@@ -13,8 +13,8 @@ public class BookCreateRequest {
     private String name;
     private String author;
     private LocalDateTime createDateTime;
-//    private Long fkLibraryId;
-//    private Long fkUserId;
+    private Long fkLibraryId;
+    private Long fkUserId;
     private String status;
 
 
