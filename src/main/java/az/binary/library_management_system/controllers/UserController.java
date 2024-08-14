@@ -1,17 +1,11 @@
 package az.binary.library_management_system.controllers;
 
-import az.binary.library_management_system.dto.requests.UserCreateRequest;
-import az.binary.library_management_system.dto.requests.UserLogInRequest;
-import az.binary.library_management_system.dto.requests.UserReadRequest;
-import az.binary.library_management_system.dto.requests.UserUpdateRequest;
+import az.binary.library_management_system.dto.requests.*;
 import az.binary.library_management_system.dto.responses.UserCreateResponse;
 import az.binary.library_management_system.dto.responses.UserLogInResponse;
 import az.binary.library_management_system.dto.responses.UserReadResponse;
 import az.binary.library_management_system.dto.responses.UserUpdateResponse;
-import az.binary.library_management_system.services.user.UserReadService;
-import az.binary.library_management_system.services.user.UserSignUpService;
-import az.binary.library_management_system.services.user.UserLogInService;
-import az.binary.library_management_system.services.user.UserUpdateService;
+import az.binary.library_management_system.services.user.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -30,6 +24,8 @@ public class UserController {
     private final UserLogInService logInService;
     private final UserReadService readService;
     private final UserUpdateService updateService;
+    private final UserDeleteService deleteService;
+
 
     @PostMapping("/sign_up")
     @ResponseStatus(HttpStatus.CREATED)
@@ -74,5 +70,16 @@ public class UserController {
         return ResponseEntity.ok("User is updated");
     }
 
+    @PostMapping("/delete_all")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteAll(){
+        deleteService.deleteAll();
+    }
+
+    @PostMapping("/delete_by_id")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void deleteById(@RequestBody @Valid UserDeleteRequest deleteRequest){
+        deleteService.deleteById(deleteRequest);
+    }
 
 }

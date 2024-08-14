@@ -30,8 +30,7 @@ public class UserUpdateService {
         Optional.ofNullable(updateRequest.getEmail()).ifPresent(user::setEmail);
         Optional.ofNullable(updateRequest.getPassword()).ifPresent(user::setPassword);
 
-
         userRepository.save(user);
-        log.info("user is updated {}", user);
+        log.info("user is updated {}", user.getFirstName());
     }
 }

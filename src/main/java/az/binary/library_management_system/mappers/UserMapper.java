@@ -16,7 +16,6 @@ public interface UserMapper {
 
     UserCreateResponse mapCreateToResponse(User user);
     UserReadResponse mapReadToResponse(User user);
-    UserUpdateResponse mapUpdateToResponse(User user);
 
     UserLogInResponse mapLogInToResponse(User user);
 }
