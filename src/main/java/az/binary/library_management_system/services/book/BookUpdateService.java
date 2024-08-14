@@ -28,6 +28,6 @@ public class BookUpdateService {
         Optional.ofNullable(updateRequest.getStatus()).ifPresent(book::setStatus);
 
         bookRepository.save(book);
-        log.info("user is updated {}", book.getAuthor());
+        log.info("Book is updated {}", book.getAuthor());
     }
 }
