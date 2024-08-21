@@ -14,5 +14,7 @@ public class UserReadResponse {
     private String lastName;
     private String email;
     private String password;
+    private Long fkBookId;
+    private Long fkLibraryId;
 
 }

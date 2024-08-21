@@ -1,9 +1,10 @@
 package az.binary.library_management_system.entities;
 
+import az.binary.library_management_system.enums.BookStatus;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 
 @Entity
@@ -25,7 +26,7 @@ public class Book {
     private String author;
 
     @Column(name = "create_date_time")
-    private LocalDateTime createDateTime;
+    private LocalDate createDateTime;
 
     @Column(name = "fk_library_id")
     private Long fkLibraryId;
@@ -34,13 +35,14 @@ public class Book {
     private Long fkUserId;
 
     @Column(name = "book_status")
-    private String status;
+    @Enumerated(EnumType.STRING)
+    private BookStatus status;
 
 
     @PrePersist
     public void prePersist(){
         if(status == null){
-            status = "D";
+            status = BookStatus.INACTIVE;
         }
     }
 

@@ -1,8 +1,9 @@
 package az.binary.library_management_system.dto.requests.book;
 
+import az.binary.library_management_system.enums.BookStatus;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -12,10 +13,10 @@ public class BookCreateRequest {
 
     private String name;
     private String author;
-    private LocalDateTime createDateTime;
+    private LocalDate createDateTime;
     private Long fkLibraryId;
     private Long fkUserId;
-    private String status;
+    private BookStatus status;
 
 
 }

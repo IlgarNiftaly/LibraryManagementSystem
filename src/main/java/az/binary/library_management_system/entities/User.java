@@ -1,6 +1,5 @@
 package az.binary.library_management_system.entities;
 
-
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -16,7 +15,7 @@ import lombok.*;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
 
@@ -42,6 +41,5 @@ public class User {
 
     @Column(name = "fk_library_id")
     private Long fkLibraryId;
-
 
 }

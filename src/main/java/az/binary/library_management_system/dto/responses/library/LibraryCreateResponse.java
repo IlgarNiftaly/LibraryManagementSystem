@@ -1,5 +1,6 @@
 package az.binary.library_management_system.dto.responses.library;
 
+import az.binary.library_management_system.enums.LibraryStatus;
 import lombok.*;
 
 
@@ -11,5 +12,7 @@ public class LibraryCreateResponse {
 
     private Long id;
     private String name;
-    private String status;
+    private Long fkBookId;
+    private Long fkUserId;
+    private LibraryStatus status;
 }

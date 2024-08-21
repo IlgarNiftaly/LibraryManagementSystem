@@ -1,8 +1,9 @@
 package az.binary.library_management_system.dto.responses.book;
 
+import az.binary.library_management_system.enums.BookStatus;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -13,9 +14,9 @@ public class BookReadResponse {
     private Long id;
     private String name;
     private String author;
-    private LocalDateTime createDateTime;
-    //    private Long fkLibraryId;
-//    private Long fkUserId;
-    private String status;
+    private LocalDate createDateTime;
+    private Long fkLibraryId;
+    private Long fkUserId;
+    private BookStatus status;
 
 }

@@ -19,7 +19,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RequestMapping("/user")
 public class UserController {
-    private final UserSignUpService signUpService;
+    private final UserCreateService createService;
     private final UserLogInService logInService;
     private final UserReadService readService;
     private final UserUpdateService updateService;
@@ -29,7 +29,7 @@ public class UserController {
     @PostMapping("/sign_up")
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<UserCreateResponse> create(@RequestBody @Valid UserCreateRequest createRequest){
-        return ResponseEntity.ok(signUpService.create(createRequest));
+        return ResponseEntity.ok(createService.create(createRequest));
     }
 
     @PostMapping("/log_in")
@@ -71,14 +71,16 @@ public class UserController {
 
     @PostMapping("/delete_all")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteAll(){
+    public ResponseEntity<String> deleteAll(){
         deleteService.deleteAll();
+        return ResponseEntity.ok("All user is deleted");
     }
 
     @PostMapping("/delete_by_id")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void deleteById(@RequestBody @Valid UserDeleteRequest deleteRequest){
+    public ResponseEntity<String> deleteById(@RequestBody @Valid UserDeleteRequest deleteRequest){
         deleteService.deleteById(deleteRequest);
+        return ResponseEntity.ok("User is deleted");
     }
 
 }

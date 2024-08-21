@@ -1,9 +1,10 @@
 package az.binary.library_management_system.dto.requests.book;
 
+import az.binary.library_management_system.enums.BookStatus;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Getter
 @Setter
@@ -20,7 +21,7 @@ public class BookUpdateRequest {
     private String author;
 
     @NotBlank(message = "createDateTime cannot be blank")
-    private LocalDateTime createDateTime;
+    private LocalDate createDateTime;
 
     @NotBlank(message = "fkLibraryId cannot be blank")
     private Long fkLibraryId;
@@ -29,6 +30,6 @@ public class BookUpdateRequest {
     private Long fkUserId;
 
     @NotBlank(message = "status cannot be blank")
-    private String status;
+    private BookStatus status;
 
 }

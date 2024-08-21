@@ -1,5 +1,6 @@
 package az.binary.library_management_system.dto.requests.library;
 
+import az.binary.library_management_system.enums.LibraryStatus;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
@@ -21,6 +22,6 @@ public class LibraryUpdateRequest {
     private Long fkUserId;
 
     @NotBlank(message = "status cannot be blank")
-    private String status;
+    private LibraryStatus status;
 
 }

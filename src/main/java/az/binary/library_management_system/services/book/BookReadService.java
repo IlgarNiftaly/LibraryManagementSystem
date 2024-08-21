@@ -3,6 +3,7 @@ package az.binary.library_management_system.services.book;
 import az.binary.library_management_system.dto.requests.book.BookReadRequest;
 import az.binary.library_management_system.dto.responses.book.BookReadResponse;
 import az.binary.library_management_system.entities.Book;
+import az.binary.library_management_system.enums.BookStatus;
 import az.binary.library_management_system.exceptions.book.BookAuthorNotFoundException;
 import az.binary.library_management_system.exceptions.book.BookNotFoundException;
 import az.binary.library_management_system.exceptions.other.StatusIsEmptyException;
@@ -28,6 +29,18 @@ public class BookReadService {
                 .toList();
     }
 
+    public List<BookReadResponse> getAllActive(){
+        return bookRepository.findByStatus(BookStatus.ACTIVE).stream()
+                .map(bookMapper::mapReadToResponse)
+                .toList();
+    }
+
+    public List<BookReadResponse> getAllInactive(){
+        return bookRepository.findByStatus(BookStatus.INACTIVE).stream()
+                .map(bookMapper::mapReadToResponse)
+                .toList();
+    }
+
     public BookReadResponse getById(BookReadRequest readRequest){
         return bookRepository.findById(readRequest.getId())
                 .map(bookMapper::mapReadToResponse)
@@ -35,20 +48,12 @@ public class BookReadService {
     }
 
     public List<BookReadResponse> getByAuthor(BookReadRequest readRequest){
-        if(bookRepository.findByStatus(readRequest.getAuthor()).isEmpty()){
+        if(bookRepository.findByAuthor(readRequest.getAuthor()).isEmpty()){
             throw new BookAuthorNotFoundException();
         }
-        return bookRepository.findByStatus(readRequest.getAuthor()).stream()
+        return bookRepository.findByAuthor(readRequest.getAuthor()).stream()
                 .map(bookMapper::mapReadToResponse)
                 .toList();
     }
 
-    public List<BookReadResponse> getByStatus(BookReadRequest readRequest){
-        if(bookRepository.findByStatus(readRequest.getStatus()).isEmpty()){
-            throw new StatusIsEmptyException();
-        }
-        return bookRepository.findByStatus(readRequest.getStatus()).stream()
-                .map(bookMapper::mapReadToResponse)
-                .toList();
-    }
 }
