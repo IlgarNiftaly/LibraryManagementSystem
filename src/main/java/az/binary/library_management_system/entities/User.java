@@ -1,5 +1,7 @@
 package az.binary.library_management_system.entities;
 
+import az.binary.library_management_system.validations.EmailValid;
+import az.binary.library_management_system.validations.InfoValid;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -19,20 +21,19 @@ public class User {
     @Column(name = "id")
     private Long id;
 
-    @NotBlank(message = "FirstName cannot be blank")
+    @InfoValid(message = "firstName structure is incorrect")
     @Column(name = "first_name")
     private String firstName;
 
-    @NotBlank(message = "LastName cannot be blank")
+    @InfoValid(message = "lastName structure is incorrect")
     @Column(name = "last_name")
     private String lastName;
 
-    @NotBlank(message = "Email cannot be blank")
     @Column(name = "email")
-    @Email(message = "invalid email structure")
+    @EmailValid
     private String email;
 
-    @NotBlank(message = "Password cannot be blank")
+    @InfoValid(message = "password structure is incorrect")
     @Column(name = "password")
     private String password;
 

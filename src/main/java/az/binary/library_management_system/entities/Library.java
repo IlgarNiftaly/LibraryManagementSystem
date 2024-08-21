@@ -1,6 +1,7 @@
 package az.binary.library_management_system.entities;
 
 import az.binary.library_management_system.enums.LibraryStatus;
+import az.binary.library_management_system.validations.InfoValid;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.*;
@@ -19,7 +20,7 @@ public class Library {
     @Column(name = "id")
     private Long id;
 
-    @NotBlank(message = "name cannot be blank")
+    @InfoValid(message = "name structure is incorrect")
     @Column(name = "library_name")
     private String name;
 

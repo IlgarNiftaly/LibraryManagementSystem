@@ -1,6 +1,7 @@
 package az.binary.library_management_system.entities;
 
 import az.binary.library_management_system.enums.BookStatus;
+import az.binary.library_management_system.validations.InfoValid;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,9 +20,11 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @InfoValid(message = "name structure is incorrect")
     @Column(name = "book_name")
     private String name;
 
+    @InfoValid(message = "author structure is incorrect")
     @Column(name = "author")
     private String author;
 
@@ -45,6 +48,5 @@ public class Book {
             status = BookStatus.INACTIVE;
         }
     }
-
 
 }
