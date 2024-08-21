@@ -1,10 +1,8 @@
 package az.binary.library_management_system.entities;
 
-import az.binary.library_management_system.validations.EmailValid;
 import az.binary.library_management_system.validations.InfoValid;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 
 
@@ -29,8 +27,8 @@ public class User {
     @Column(name = "last_name")
     private String lastName;
 
+    @Email(message = "Email structure is incorrect")
     @Column(name = "email")
-    @EmailValid
     private String email;
 
     @InfoValid(message = "password structure is incorrect")

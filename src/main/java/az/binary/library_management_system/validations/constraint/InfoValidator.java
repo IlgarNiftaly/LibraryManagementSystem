@@ -14,7 +14,7 @@ public class InfoValidator implements ConstraintValidator<InfoValid, String> {
     @Override
     public boolean isValid(String info, ConstraintValidatorContext constraintValidatorContext) {
         return info != null &&
-                info.length() > 3 &&
-                info.length() < 30;
+                info.length() > 1 &&
+                info.length() < 50;
     }
 }

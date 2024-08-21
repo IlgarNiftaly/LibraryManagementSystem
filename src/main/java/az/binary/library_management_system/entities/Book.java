@@ -28,8 +28,8 @@ public class Book {
     @Column(name = "author")
     private String author;
 
-    @Column(name = "create_date_time")
-    private LocalDate createDateTime;
+    @Column(name = "create_date")
+    private LocalDate createDate;
 
     @Column(name = "fk_library_id")
     private Long fkLibraryId;

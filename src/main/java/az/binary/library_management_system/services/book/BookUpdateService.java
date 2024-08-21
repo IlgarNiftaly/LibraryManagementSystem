@@ -24,7 +24,7 @@ public class BookUpdateService {
 
         Optional.ofNullable(updateRequest.getName()).ifPresent(book::setName);
         Optional.ofNullable(updateRequest.getAuthor()).ifPresent(book::setAuthor);
-        Optional.ofNullable(updateRequest.getCreateDateTime()).ifPresent(book::setCreateDateTime);
+        Optional.ofNullable(updateRequest.getCreateDateTime()).ifPresent(book::setCreateDate);
         Optional.ofNullable(updateRequest.getStatus()).ifPresent(book::setStatus);
 
         bookRepository.save(book);
